@@ -89,9 +89,9 @@ public class SimpleIterationSolver implements LinearSystemSolver {
             table.addRow(iterationsCount, nextApprox, maxAccuracy);
 
             if (this.accuracy >= maxAccuracy) {
-                System.out.printf("Done in %d iterations\n", iterationsCount);
                 break;
             }
+
             iterationsCount++;
             prevApprox = nextApprox;
         }

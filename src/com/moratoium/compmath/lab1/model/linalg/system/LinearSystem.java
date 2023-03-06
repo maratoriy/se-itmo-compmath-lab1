@@ -27,7 +27,7 @@ public class LinearSystem extends DoubleMatrix {
         for (int row = 0; row < ratios.getSize(); row++) {
             for (int column = 0; column < ratios.getSize(); column++) {
                 final int elemDominance = ratios.elemDominance(row, column);
-                if (elemDominance >= 0) {
+                if (elemDominance >= 0 && !indexMap.containsKey(column)) {
                     indexMap.put(column, row);
                     if (elemDominance == 1) oneStrict = true;
                 }
